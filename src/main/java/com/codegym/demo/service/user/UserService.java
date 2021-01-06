@@ -1,6 +1,7 @@
 package com.codegym.demo.service.user;
 
 import com.codegym.demo.model.User;
+import com.codegym.demo.model.UserPrinciple;
 import com.codegym.demo.repository.IUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -36,7 +37,8 @@ public class UserService implements IUserService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return null;
+        User user = userRepository.findByUsername(username);
+        return UserPrinciple.build(user);
     }
 
     @Override
