@@ -14,8 +14,7 @@ public class JwtResponse {
     private Collection<? extends GrantedAuthority> roles;
 
 
-    public JwtResponse(Long id, String token, String username, Collection<? extends GrantedAuthority> roles) {
-        this.id = id;
+    public JwtResponse(String token, String username, Collection<? extends GrantedAuthority> roles) {
         this.token = token;
         this.username = username;
         this.roles = roles;
